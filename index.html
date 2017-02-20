@@ -1,0 +1,35 @@
+<html ng-app="AppMorse">
+<head>
+	<title>Pugs Translator Code Morse</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/generator.css">
+	<script src="js/angular.js"></script>
+	<script src="js/AppMorse.js"></script>
+</head>
+
+<body ng-controller="AppMorseCtrl">
+	{{loadSoung()}}
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>{{titulo}}</h3>
+			</div>
+			<div class="panel-body">
+				<label for="text">Digite o texto</label>
+				<textarea class="form-control" rows="5" id="text" ng-keyup="translator(evente=$event)"></textarea>
+
+				
+				<label for="morse">Morse</label>
+				<textarea class="form-control" rows="5" id="morse" ng-disabled="true">{{codigoMorse}}</textarea>
+				<br> 
+
+				<p class="fonte"> Teste</p>
+            	<button class="btn btn-primary" ng-click="">Translator</button> 
+            	<button class="btn btn-primary" ng-click="stringArray(codigoMorse)"><span></span> Listening</button>
+		    	<button class="btn btn-primary" ng-click="stopSoung()"><span ></span>Stop</button>                 
+		    </div>
+		</div>     
+	</div> 
+</body>
+</html>
